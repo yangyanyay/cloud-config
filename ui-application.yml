@@ -1,0 +1,20 @@
+server:
+  port: 80
+spring:
+  application:
+    name: ui
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://localhost:9411/
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serverUrl:
+      defaultZone: http://eureka7001.com:8761/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+    #register-with-eureka: false
+feign:
+  circuitbreaker:
+    enabled: true
